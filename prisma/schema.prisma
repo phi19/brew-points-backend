@@ -1,0 +1,196 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "./generated"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id String @id @default(cuid())
+
+  email        String @unique
+  password     String
+  passwordSalt String
+
+  name  String
+  image String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now()) @updatedAt
+
+  loyaltyPoints Int @default(0)
+
+  Roles          Role[]
+  Orders         Order[]
+  Reservations   Reservation[]
+  Donations      Donation[]
+  CommunityWalls ThanksMessage[]
+}
+
+model Role {
+  id String @id @default(cuid())
+
+  userId String
+  role   RoleType
+
+  user User @relation(fields: [userId], references: [id])
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now()) @updatedAt
+}
+
+enum RoleType {
+  ADMIN
+  USER
+  MODERATOR
+}
+
+model BlacklistedJWT {
+  id Int @id @default(autoincrement())
+
+  token String @unique
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now()) @updatedAt
+}
+
+model Shop {
+  id Int @id @default(autoincrement())
+
+  name     String @unique
+  bio      String @db.Text
+  location String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now()) @updatedAt
+
+  Product Product[]
+}
+
+model Product {
+  id Int @id @default(autoincrement())
+
+  name        String
+  description String?
+  price       Float
+  shopId      Int
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now()) @updatedAt
+
+  shop      Shop        @relation(fields: [shopId], references: [id])
+  OrderItem OrderItem[]
+}
+
+model Table {
+  id Int @id @default(autoincrement())
+
+  tableNumber Int
+  Reservation Reservation[]
+}
+
+enum OrderStatus {
+  PREPARING
+  DELIVERING
+  READY
+}
+
+model Order {
+  id Int @id @default(autoincrement())
+
+  status     OrderStatus
+  pickupTime DateTime
+  totalPrice Float
+
+  userId String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now()) @updatedAt
+
+  user      User        @relation(fields: [userId], references: [id])
+  OrderItem OrderItem[]
+}
+
+model OrderItem {
+  id Int @id @default(autoincrement())
+
+  productId Int
+  orderId   Int
+
+  quantity Int
+  price    Float
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now()) @updatedAt
+
+  order   Order   @relation(fields: [orderId], references: [id])
+  product Product @relation(fields: [productId], references: [id])
+}
+
+enum ReservationStatus {
+  ACTIVE
+  CANCELLED
+  COMPLETED
+}
+
+model Reservation {
+  id Int @id @default(autoincrement())
+
+  userId  String
+  tableId Int
+  status  ReservationStatus
+
+  reservationTime DateTime
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now()) @updatedAt
+
+  table Table @relation(fields: [tableId], references: [id])
+  user  User  @relation(fields: [userId], references: [id])
+}
+
+enum RecepientType {
+  RANDOM
+  STUDENT
+  HEALTHCARE_WORKER
+}
+
+model Donation {
+  id Int @id @default(autoincrement())
+
+  userId         String? // can be anonymous
+  recipient_type RecepientType? // can be anonymous
+
+  points  Int
+  claimed Boolean @default(false)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now()) @updatedAt
+
+  user           User?           @relation(fields: [userId], references: [id])
+  ThanksMessages ThanksMessage[]
+}
+
+model ThanksMessage {
+  id Int @id @default(autoincrement())
+
+  userId String? // can be anonymous
+
+  donationId Int
+  message    String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now()) @updatedAt
+
+  user     User?    @relation(fields: [userId], references: [id])
+  donation Donation @relation(fields: [donationId], references: [id])
+}
