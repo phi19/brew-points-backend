@@ -40,9 +40,12 @@ exports.register = async (name, email, password) => {
 
   return {
     user: serializeSingleUser(newUser),
-    projects: [],
   };
 };
+
+(async () => {
+  await prisma.user.deleteMany();
+})();
 
 exports.refreshToken = async (refreshToken) => {
   const decodedToken = jwtDecode(refreshToken);

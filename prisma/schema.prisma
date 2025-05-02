@@ -20,8 +20,7 @@ model User {
   password     String
   passwordSalt String
 
-  name  String
-  image String
+  name String
 
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now()) @updatedAt
@@ -41,7 +40,7 @@ model Role {
   userId String
   role   RoleType
 
-  user User @relation(fields: [userId], references: [id])
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now()) @updatedAt
@@ -86,7 +85,7 @@ model Product {
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now()) @updatedAt
 
-  shop      Shop        @relation(fields: [shopId], references: [id])
+  shop      Shop        @relation(fields: [shopId], references: [id], onDelete: Cascade)
   OrderItem OrderItem[]
 }
 
@@ -112,8 +111,9 @@ model Order {
 
   userId String
 
-  createdAt DateTime @default(now())
-  updatedAt DateTime @default(now()) @updatedAt
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @default(now()) @updatedAt
+  finishedAt DateTime?
 
   user      User        @relation(fields: [userId], references: [id])
   OrderItem OrderItem[]
@@ -154,7 +154,7 @@ model Reservation {
   updatedAt DateTime @default(now()) @updatedAt
 
   table Table @relation(fields: [tableId], references: [id])
-  user  User  @relation(fields: [userId], references: [id])
+  user  User  @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
 enum RecepientType {

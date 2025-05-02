@@ -4,7 +4,7 @@ const prisma = require("../../../prisma/prismaClient");
 exports.attributeRole = async (user) => {
   await prisma.role.create({
     data: {
-      user,
+      userId: user.id,
       role: RoleType.USER,
     },
   });

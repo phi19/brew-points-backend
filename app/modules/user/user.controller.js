@@ -22,7 +22,6 @@ exports.login = async (req, res, next) => {
     res.status(HTTPStatusCodes.OK).json({
       user: {
         user: req.user.formattedUser,
-        projects: req.user.formattedProjects,
       },
     });
   } catch (err) {
@@ -60,6 +59,7 @@ exports.register = async (req, res, next) => {
 
     res.status(HTTPStatusCodes.CREATED).json({ user });
   } catch (err) {
+    console.log(err);
     next(err);
   }
 };
