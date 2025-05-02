@@ -1,8 +1,13 @@
 const { HTTP400Error } = require("../../utils/errors/custom");
 
-exports.newRegisterValidator = (name, email, password, passwordConfirmation) => {
+exports.newRegisterValidator = (
+  name,
+  email,
+  password,
+  passwordConfirmation
+) => {
   if (name.length < 2) {
-     throw new HTTP400Error("Nome muito pequeno (2+ caracteres)", {
+    throw new HTTP400Error("Nome muito pequeno (2+ caracteres)", {
       type: "email",
     });
   }

@@ -21,7 +21,7 @@ module.exports = (app) => {
   passport.use(passportLocalStrategy);
   passport.use("jwt-access", passportJwtStrategy);
   passport.use("jwt-refresh", passportJwtRefreshStrategy);
-  app.use(routes);
+  app.use("/api", routes);
   app.use(errorHandlingMiddleware());
 
   if (HTTPS) {

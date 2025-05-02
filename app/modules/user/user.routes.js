@@ -8,12 +8,12 @@ const {
   jwtRefreshAuthentication,
 } = require("../../utils/authentication/roles.authentication");
 
-router.post("/v1/login", passwordAuthentication(), UserController.login);
+router.post("/login", passwordAuthentication(), UserController.login);
 
-router.post("/v1/register", UserController.register);
+router.post("/register", UserController.register);
 
 router.post(
-  "/v1/refresh-token",
+  "/refresh-token",
   jwtRefreshAuthentication(),
   UserController.refreshToken
 );
