@@ -6,6 +6,18 @@ exports.newRegisterValidator = (
   password,
   passwordConfirmation
 ) => {
+  if (!name || !email || !password || !passwordConfirmation) {
+    throw new HTTP400Error("Todos os campos devem ser preenchidos", {
+      type: !email
+        ? "email"
+        : !name
+        ? "name"
+        : !password
+        ? "password"
+        : "passwordConfirmation",
+    });
+  }
+
   if (name.length < 2) {
     throw new HTTP400Error("Nome muito pequeno (2+ caracteres)", {
       type: "email",
