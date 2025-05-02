@@ -43,10 +43,6 @@ exports.register = async (name, email, password) => {
   };
 };
 
-(async () => {
-  await prisma.user.deleteMany();
-})();
-
 exports.refreshToken = async (refreshToken) => {
   const decodedToken = jwtDecode(refreshToken);
   const email = decodedToken.email;
