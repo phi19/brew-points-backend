@@ -1,5 +1,6 @@
 const HTTPStatusCodes = require("../../utils/HTTPStatusCodes");
 const ShopService = require("./shop.service");
+const ShopValidator = require("./shop.validator");
 
 exports.getAllShops = async (req, res, next) => {
   try {
@@ -27,6 +28,8 @@ exports.getShopProducts = async (req, res, next) => {
 
 exports.createShop = async (req, res, next) => {
   try {
+    ShopValidator.createShopValidator(req.body.shop);
+
     const shop = await ShopService.createShop(req.body.user, req.body.shop);
 
     res.status(HTTPStatusCodes.OK).json({

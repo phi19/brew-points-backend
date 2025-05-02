@@ -20,7 +20,12 @@ exports.createShop = async (user, shopProps) => {
       userId: user.id,
       name: shopProps.name,
       bio: shopProps.bio,
-      location: shopProps.location,
+      location: {
+        create: {
+          latitude: shopProps.location.latitude,
+          longitude: shopProps.location.longitude,
+        },
+      },
     },
   });
 

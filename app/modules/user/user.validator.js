@@ -1,6 +1,6 @@
 const { HTTP400Error } = require("../../utils/errors/custom");
 
-exports.newRegisterValidator = (
+exports.registerValidator = (
   name,
   email,
   password,
@@ -42,3 +42,4 @@ exports.newRegisterValidator = (
     });
   }
 };
+

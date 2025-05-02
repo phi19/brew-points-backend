@@ -64,14 +64,24 @@ model BlacklistedJWT {
 model Shop {
   id Int @id @default(autoincrement())
 
-  name     String @unique
-  bio      String @db.Text
-  location String
+  name       String @unique
+  bio        String @db.Text
+  locationId Int    @unique
 
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now()) @updatedAt
 
-  Product Product[]
+  Product  Product[]
+  location Location  @relation(fields: [locationId], references: [id])
+}
+
+model Location {
+  id Int @id @default(autoincrement())
+
+  latitude  Decimal
+  longitude Decimal
+
+  Shop Shop?
 }
 
 model Product {

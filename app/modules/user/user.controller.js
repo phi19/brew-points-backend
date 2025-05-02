@@ -31,7 +31,7 @@ exports.login = async (req, res, next) => {
 
 exports.register = async (req, res, next) => {
   try {
-    UserValidator.newRegisterValidator(
+    UserValidator.registerValidator(
       req.body.name,
       req.body.email,
       req.body.password,
