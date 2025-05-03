@@ -6,6 +6,6 @@ router.post("/findAll", ShopController.getAllShops);
 
 router.post("/create", ShopController.createShop);
 
-router.post("/findShopById", ShopController.getShopProducts);
+router.post("/findById", ShopController.getShopProducts);
 
 module.exports = router;
