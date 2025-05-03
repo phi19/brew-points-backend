@@ -67,7 +67,7 @@ exports.register = async (req, res, next) => {
 exports.phoneRegister = async (req, res, next) => {
   const dummyUser = {
     id: "user_static_12345",
-    name: "Hackathon User",
+    name: "Pedro Santos",
     email: "hackathon.user@example.com",
     phoneNumber: "+351999999999",
     createdAt: new Date("2023-10-27T10:00:00Z"),
