@@ -23,7 +23,7 @@ module.exports = (app) => {
   passport.use("jwt-refresh", passportJwtRefreshStrategy);
   app.use("/api", routes);
   app.use("*", (req, res) => {
-   res.send("Welcome to the BrewPoints API")
+   res.send("Welcome to the BrewPoints API v1")
   });
   app.use(errorHandlingMiddleware());
 
