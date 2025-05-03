@@ -71,6 +71,13 @@ exports.phoneRegister = async (req, res, next) => {
     email: "hackathon.user@example.com",
     phoneNumber: "+351999999999",
     createdAt: new Date("2023-10-27T10:00:00Z"),
+    location: {
+      city: "Coimbra",
+      country: "Portugal",
+      // latitude: 40.2033,
+      // longitude: -8.4103
+    },
+    // profileImageUrl: 'https://example.com/avatar_miguel.png'
   };
 
   try {
