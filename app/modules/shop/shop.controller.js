@@ -12,7 +12,7 @@ exports.getAllShops = async (req, res, next) => {
         description: "Specialty Coffee & Pastries",
         rating: 4.8,
         // Example Unsplash URLs (replace topic/query as needed)
-        image: "https://picsum.photos/seed/picsum/400/300",
+        image: "https://picsum.photos/400/300",
       },
       {
         id: "shop_2",
@@ -20,7 +20,7 @@ exports.getAllShops = async (req, res, next) => {
         category: "Coffee Shop",
         description: "Quick Bites & Strong Brews",
         rating: 4.5,
-        image: "https://picsum.photos/seed/picsum/400/300",
+        image: "https://picsum.photos/400/300",
       },
       {
         id: "shop_3",
@@ -28,7 +28,7 @@ exports.getAllShops = async (req, res, next) => {
         category: "Roastery & Café",
         description: "Freshly Roasted Beans",
         rating: 4.9,
-        image: "https://picsum.photos/seed/picsum/400/300",
+        image: "https://picsum.photos/400/300",
       },
       {
         id: "shop_4",
@@ -36,7 +36,7 @@ exports.getAllShops = async (req, res, next) => {
         category: "Café & Bistro",
         description: "Lunch & Perfect Lattes",
         rating: 4.7,
-        image: "https://picsum.photos/seed/picsum/400/300",
+        image: "https://picsum.photos/400/300",
       },
       {
         id: "shop_5",
@@ -44,7 +44,7 @@ exports.getAllShops = async (req, res, next) => {
         category: "Coffee Shop",
         description: "Your everyday escape",
         rating: 4.6,
-        image: "https://picsum.photos/seed/picsum/400/300",
+        image: "https://picsum.photos/400/300",
       },
       {
         id: "shop_6",
@@ -52,7 +52,7 @@ exports.getAllShops = async (req, res, next) => {
         category: "Café",
         description: "Community coffee spot",
         rating: 4.4,
-        image: "https://picsum.photos/seed/picsum/400/300",
+        image: "https://picsum.photos/400/300",
       },
       // Add more shops as needed
     ];
