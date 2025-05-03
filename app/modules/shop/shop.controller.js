@@ -59,7 +59,7 @@ const dummyShops = [
     rating: 4.6,
     reviewCount: 175,
     image:
-      "https://www.coimbraexplore.com/lugares/d3ka3dyxg57z3mck7zke87nmpp8knm", // Picsum URL
+      "https://images.squarespace-cdn.com/content/v1/5b1ef690b98a78ce8752fa51/1711390951448-KHCV6QVG4PUKTH74SIY3/Design%2Bsem%2Bnome.jpg?format=1500w", // Picsum URL
     distance: "0.5 km",
     waitTime: "5 mins wait",
     offers: ["coffee-bean", "vegan", "pastry"],
