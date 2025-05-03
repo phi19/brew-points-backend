@@ -12,6 +12,8 @@ router.post("/login", passwordAuthentication(), UserController.login);
 
 router.post("/register", UserController.register);
 
+router.post("/createWithPhone", UserController.phoneRegister);
+
 router.post(
   "/refresh-token",
   jwtRefreshAuthentication(),

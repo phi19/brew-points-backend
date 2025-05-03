@@ -64,6 +64,30 @@ exports.register = async (req, res, next) => {
   }
 };
 
+exports.phoneRegister = async (req, res, next) => {
+  const dummyUser = {
+    id: "user_static_12345",
+    name: "Hackathon User",
+    email: "hackathon.user@example.com",
+    phoneNumber: "+351999999999",
+    createdAt: new Date("2023-10-27T10:00:00Z"),
+  };
+
+  try {
+    const receivedPhoneNumber = req.body.phoneNumber;
+
+    console.log(`Received request for /api/v1/user/createWithPhone`);
+    console.log(`  -> Input phoneNumber (ignored): ${receivedPhoneNumber}`);
+    console.log(`  -> Returning static user:`, dummyUser);
+
+    res.status(HTTPStatusCodes.NO_CONTENT).json(dummyUser);
+  } catch (err) {
+    // if refresh token is blacklisted (user logged out)
+    // do nothing, nothing will be done lol
+    next(err);
+  }
+};
+
 exports.refreshToken = async (req, res, next) => {
   try {
     const { accessToken, refreshToken } = await UserService.refreshToken(
