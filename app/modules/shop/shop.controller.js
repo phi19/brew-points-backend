@@ -12,7 +12,9 @@ const dummyShops = [
     reviewCount: 230,
     image:
       "https://cafesantacruz.com/wp-content/uploads/2023/02/livro_santacruz_encontrodememorias2017_Page_095_Image_0001-1-676x1024.jpg", // Picsum URL
-    distance: "1.4 km",
+    //distance: "1.4 km",
+    latitude: 40.209,
+    longitude: -8.429,
     waitTime: "10 mins wait",
     offers: ["pastry", "coffee-bean", "milk"],
     products: [
@@ -60,7 +62,9 @@ const dummyShops = [
     reviewCount: 175,
     image:
       "https://images.squarespace-cdn.com/content/v1/5b1ef690b98a78ce8752fa51/1711390951448-KHCV6QVG4PUKTH74SIY3/Design%2Bsem%2Bnome.jpg?format=1500w", // Picsum URL
-    distance: "0.5 km",
+    // distance: "0.5 km",
+    latitude: 40.2115, // Example Coimbra coordinates
+    longitude: -8.431,
     waitTime: "5 mins wait",
     offers: ["coffee-bean", "vegan", "pastry"],
     products: [
@@ -100,7 +104,9 @@ const dummyShops = [
     reviewCount: 125,
     image:
       "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Flookaside.fbsbx.com%2Flookaside%2Fcrawler%2Fmedia%2F%3Fmedia_id%3D105544225695975&f=1&nofb=1&ipt=c36fc117203bbe5f2f40938b07185ab94bbd7f2cfde9f90280e89dc0aa4e0b6b", // Picsum URL
-    distance: "0.8 km",
+    //distance: "0.8 km",
+    latitude: 40.2055, // Example Coimbra coordinates
+    longitude: -8.4255,
     waitTime: "5 mins wait",
     offers: ["coffee-bean", "sandwich"],
     products: [
@@ -140,7 +146,9 @@ const dummyShops = [
     reviewCount: 410,
     image:
       "https://www.scratch-magazine.pt/wp-content/uploads/2020/12/pastelara.jpg", // Picsum URL
-    distance: "2.1 km",
+    //distance: "2.1 km",
+    latitude: 40.215, // Example Coimbra coordinates
+    longitude: -8.419,
     waitTime: "15 mins wait",
     offers: ["coffee-bean", "pastry", "filter"],
     products: [
