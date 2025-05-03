@@ -6,7 +6,7 @@ const dummyShops = [
   {
     id: "shop_1",
     name: "Santa Cruz",
-    category: "Café Restaurante",
+    category: "Coffee Shop",
     description: "Historic charm & great coffee",
     rating: 4.8,
     reviewCount: 230,
@@ -56,7 +56,7 @@ const dummyShops = [
   {
     id: "shop_2",
     name: "Nau Café",
-    category: "Modern Café",
+    category: "Coffee Shop",
     description: "Specialty brews and light bites",
     rating: 4.6,
     reviewCount: 175,
@@ -98,7 +98,7 @@ const dummyShops = [
   {
     id: "shop_3", // Changed ID to avoid conflict if needed
     name: "Pastelaria do Parque",
-    category: "Roastery & Café",
+    category: "Bakery & Pastry",
     description: "Quick Bites & Strong Brews",
     rating: 4.5,
     reviewCount: 125,
@@ -140,7 +140,7 @@ const dummyShops = [
   {
     id: "shop_4", // Changed ID
     name: "Pastelaria Violeta",
-    category: "Roastery & Café",
+    category: "Bakery & Pastry",
     description: "Freshly Roasted Beans",
     rating: 4.9,
     reviewCount: 410,
