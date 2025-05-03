@@ -52,7 +52,7 @@ const dummyShops = [
     category: "Modern Café",
     description: "Specialty brews and light bites",
     rating: 4.6,
-    reviewCount: 185,
+    reviewCount: 175,
     image: "https://picsum.photos/seed/naucafe/800/600", // Picsum URL
     distance: "0.5 km",
     waitTime: "5 mins wait",
@@ -88,7 +88,7 @@ const dummyShops = [
     category: "Coffee Shop",
     description: "Quick Bites & Strong Brews",
     rating: 4.5,
-    reviewCount: 155,
+    reviewCount: 125,
     image: "https://picsum.photos/seed/espressohub/800/600", // Picsum URL
     distance: "0.8 km",
     waitTime: "5 mins wait",
@@ -124,7 +124,7 @@ const dummyShops = [
     category: "Roastery & Café",
     description: "Freshly Roasted Beans",
     rating: 4.9,
-    reviewCount: 310,
+    reviewCount: 410,
     image: "https://picsum.photos/seed/artisanroast/800/600", // Picsum URL
     distance: "2.1 km",
     waitTime: "15 mins wait",
