@@ -80,7 +80,7 @@ exports.phoneRegister = async (req, res, next) => {
     console.log(`  -> Input phoneNumber (ignored): ${receivedPhoneNumber}`);
     console.log(`  -> Returning static user:`, dummyUser);
 
-    res.status(HTTPStatusCodes.NO_CONTENT).json(dummyUser);
+    res.status(HTTPStatusCodes.OK).json(dummyUser);
   } catch (err) {
     // if refresh token is blacklisted (user logged out)
     // do nothing, nothing will be done lol
